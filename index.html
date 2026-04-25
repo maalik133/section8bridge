@@ -9,7 +9,7 @@
 :root{
   --navy:#102A43;
   --blue:#2563EB;
-  --light:#EAF3FF;
+  --green:#16A34A;
   --orange:#EA580C;
   --text:#111827;
   --muted:#667085;
@@ -36,6 +36,7 @@ body{
   text-align:center;
   font-weight:800;
   border-radius:0 0 16px 16px;
+  font-size:14px;
 }
 
 .card{
@@ -68,13 +69,15 @@ body{
 }
 
 h1{
-  font-size:28px;
-  margin-bottom:10px;
+  font-size:29px;
+  line-height:1.1;
+  margin:0 0 10px;
 }
 
 .hero p{
   font-size:14px;
   opacity:.95;
+  line-height:1.45;
 }
 
 .content{
@@ -85,48 +88,124 @@ h1{
   background:#FFF7ED;
   border:1px solid #FED7AA;
   padding:14px;
-  border-radius:14px;
+  border-radius:16px;
   text-align:center;
   margin-bottom:14px;
 }
 
-.timer{
-  font-size:28px;
+.timer-title{
+  color:#9A3412;
   font-weight:900;
+  font-size:14px;
+  margin-bottom:7px;
+}
+
+.timer{
+  font-size:29px;
+  font-weight:950;
   color:#EA580C;
 }
 
 .live-box{
   background:#ECFDF5;
   border:1px solid #BBF7D0;
-  padding:12px;
-  border-radius:14px;
+  padding:13px;
+  border-radius:16px;
   margin-bottom:16px;
+  display:flex;
+  gap:10px;
+  align-items:flex-start;
+}
+
+.dot{
+  width:10px;
+  height:10px;
+  background:#22C55E;
+  border-radius:50%;
+  margin-top:5px;
+  box-shadow:0 0 0 6px rgba(34,197,94,.13);
+  flex-shrink:0;
+}
+
+.live-box strong{
+  display:block;
+  font-size:14px;
+  margin-bottom:3px;
+}
+
+.live-box span{
+  font-size:13px;
+  color:#166534;
 }
 
 .section-title{
   margin:18px 0 10px;
-  font-size:18px;
+  font-size:20px;
 }
 
 .benefit{
   border:1px solid var(--border);
-  border-radius:14px;
-  padding:12px;
+  border-radius:16px;
+  padding:14px;
   margin-bottom:10px;
+  display:flex;
+  gap:12px;
+}
+
+.icon{
+  width:34px;
+  height:34px;
+  border-radius:50%;
+  background:#EFF6FF;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-shrink:0;
+}
+
+.benefit strong{
+  display:block;
+  font-size:15px;
+  margin-bottom:3px;
+}
+
+.benefit p{
+  margin:0;
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.35;
 }
 
 .steps{
   background:#F8FAFC;
   border:1px solid #E2E8F0;
-  padding:14px;
-  border-radius:16px;
+  padding:16px;
+  border-radius:18px;
   margin-top:16px;
 }
 
 .step{
-  margin-bottom:10px;
+  display:flex;
+  gap:10px;
+  margin-bottom:12px;
   font-size:14px;
+  color:#344054;
+}
+
+.step:last-child{margin-bottom:0}
+
+.num{
+  width:24px;
+  height:24px;
+  background:#2563EB;
+  color:white;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  font-size:12px;
+  font-weight:900;
+  flex-shrink:0;
 }
 
 .cta{
@@ -139,28 +218,45 @@ h1{
   border-radius:14px;
   font-weight:900;
   text-decoration:none;
-  margin-top:16px;
+  margin-top:18px;
+  box-shadow:0 14px 24px rgba(37,99,235,.28);
+}
+
+.small{
+  font-size:12px;
+  color:#667085;
+  text-align:center;
+  margin-top:8px;
 }
 
 .faq-item{
   border:1px solid var(--border);
-  border-radius:12px;
+  border-radius:14px;
   margin-bottom:8px;
+  overflow:hidden;
 }
 
 .faq-q{
-  padding:12px;
+  padding:13px;
   display:flex;
   justify-content:space-between;
-  font-weight:700;
+  align-items:center;
+  font-weight:800;
   cursor:pointer;
+}
+
+.plus{
+  color:#2563EB;
+  font-size:22px;
+  font-weight:900;
 }
 
 .faq-a{
   display:none;
-  padding:0 12px 12px;
+  padding:0 13px 13px;
   font-size:13px;
   color:#555;
+  line-height:1.45;
 }
 
 .disclaimer{
@@ -168,6 +264,7 @@ h1{
   text-align:center;
   margin-top:14px;
   color:#888;
+  line-height:1.4;
 }
 </style>
 </head>
@@ -182,63 +279,115 @@ h1{
 <div class="card">
 
 <div class="hero">
-<div class="progress-wrap">
-<div class="progress" id="progress"></div>
-</div>
+  <div class="progress-wrap">
+    <div class="progress" id="progress"></div>
+  </div>
 
-<h1>Check Assistance Programs Available In Your Area</h1>
-<p>See if you may qualify for rent, utilities, groceries, or housing support.</p>
+  <h1>Check Assistance Programs Available In Your Area</h1>
+  <p>
+    See if you may qualify for rent, utilities, groceries, or housing support.
+    Availability depends on your location and eligibility.
+  </p>
 </div>
 
 <div class="content">
 
-<div class="timer-box">
-<div>Applications updating soon:</div>
-<div class="timer" id="timer">14:59</div>
-</div>
+  <div class="timer-box">
+    <div class="timer-title">Application spots are updating soon. Check before the window closes:</div>
+    <div class="timer" id="timer">14:59</div>
+  </div>
 
-<div class="live-box" id="live">
-Maria from Florida just qualified for $300 in grocery assistance
-</div>
+  <div class="live-box">
+    <div class="dot"></div>
+    <div>
+      <strong>Recent eligibility activity</strong>
+      <span id="live">Maria from Florida just qualified for $300 in grocery assistance</span>
+    </div>
+  </div>
 
-<h2 class="section-title">Programs May Include:</h2>
+  <h2 class="section-title">Programs May Include:</h2>
 
-<div class="benefit">🏠 Rent & Housing Support</div>
-<div class="benefit">⚡ Utility Bill Assistance</div>
-<div class="benefit">🛒 Food & Grocery Programs</div>
-<div class="benefit">📍 Local Assistance Options</div>
+  <div class="benefit">
+    <div class="icon">🏠</div>
+    <div>
+      <strong>Rent & Housing Support</strong>
+      <p>Programs that may help eligible people with rent or housing-related costs.</p>
+    </div>
+  </div>
 
-<div class="steps">
-<h2 class="section-title">What Happens Next?</h2>
-<div class="step">1. Tap "Check Eligibility"</div>
-<div class="step">2. Enter basic details</div>
-<div class="step">3. See available options</div>
-</div>
+  <div class="benefit">
+    <div class="icon">⚡</div>
+    <div>
+      <strong>Utility Bill Assistance</strong>
+      <p>Help with electricity, gas, water, or other household utility expenses.</p>
+    </div>
+  </div>
 
-<a href="https://trksy.org/aff_c?offer_id=2300&aff_id=170653" class="cta" onclick="fill()">Check Eligibility →</a>
+  <div class="benefit">
+    <div class="icon">🛒</div>
+    <div>
+      <strong>Food & Grocery Programs</strong>
+      <p>Resources that may help households manage rising food costs.</p>
+    </div>
+  </div>
 
-<h2 class="section-title">Frequently Asked Questions</h2>
+  <div class="benefit">
+    <div class="icon">📍</div>
+    <div>
+      <strong>Local Assistance Options</strong>
+      <p>Options vary by state, city, income, household size, and availability.</p>
+    </div>
+  </div>
 
-<div class="faq-item">
-<div class="faq-q">Is this free? <span>+</span></div>
-<div class="faq-a">Yes, checking eligibility is completely free.</div>
-</div>
+  <div class="steps">
+    <h2 class="section-title" style="margin-top:0;">What Happens Next?</h2>
 
-<div class="faq-item">
-<div class="faq-q">What info is needed? <span>+</span></div>
-<div class="faq-a">Basic info like name, zip code, and contact details.</div>
-</div>
+    <div class="step">
+      <span class="num">1</span>
+      <span>Tap “Check Eligibility” below.</span>
+    </div>
 
-<div class="faq-item">
-<div class="faq-q">Will I qualify? <span>+</span></div>
-<div class="faq-a">Eligibility depends on your situation and location.</div>
-</div>
+    <div class="step">
+      <span class="num">2</span>
+      <span>Enter basic details like your name, address, zip code, email, and phone number.</span>
+    </div>
 
-<a href="https://trksy.org/aff_c?offer_id=2300&aff_id=170653" class="cta" onclick="fill()">Continue →</a>
+    <div class="step">
+      <span class="num">3</span>
+      <span>Continue to see what assistance options may be available based on your info.</span>
+    </div>
+  </div>
 
-<p class="disclaimer">
-Not affiliated with any government agency. Results vary.
-</p>
+  <a href="https://trksy.org/aff_c?offer_id=2300&aff_id=170653" class="cta" onclick="fill()">Check Eligibility →</a>
+  <div class="small">Free to check • No obligation • Takes about 1–2 minutes</div>
+
+  <h2 class="section-title">Frequently Asked Questions</h2>
+
+  <div class="faq-item">
+    <div class="faq-q">Is this free? <span class="plus">+</span></div>
+    <div class="faq-a">Yes, checking eligibility is completely free and there is no obligation.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">What info is needed? <span class="plus">+</span></div>
+    <div class="faq-a">The next page may ask for basic information such as your name, address, zip code, email, phone number, and date of birth to check eligibility.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Will I qualify? <span class="plus">+</span></div>
+    <div class="faq-a">Eligibility depends on your location, income, household situation, and program availability.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">What programs can I check? <span class="plus">+</span></div>
+    <div class="faq-a">Programs may include rent assistance, housing support, utility bill help, grocery resources, or other local benefit options.</div>
+  </div>
+
+  <a href="https://trksy.org/aff_c?offer_id=2300&aff_id=170653" class="cta" onclick="fill()">Continue To Eligibility Check →</a>
+
+  <p class="disclaimer">
+    Not affiliated with any government agency. Results vary by location, eligibility, and program availability.
+  </p>
 
 </div>
 </div>
@@ -250,7 +399,7 @@ const progress = document.getElementById("progress");
 window.addEventListener("scroll", () => {
   let scroll = window.scrollY;
   let height = document.body.scrollHeight - window.innerHeight;
-  let percent = (scroll / height) * 100;
+  let percent = Math.min(96, Math.max(18, (scroll / height) * 100));
   progress.style.width = percent + "%";
 });
 
@@ -261,7 +410,10 @@ function fill(){
 document.querySelectorAll(".faq-q").forEach(q=>{
   q.onclick = ()=>{
     let a = q.nextElementSibling;
-    a.style.display = a.style.display === "block" ? "none" : "block";
+    let plus = q.querySelector(".plus");
+    let open = a.style.display === "block";
+    a.style.display = open ? "none" : "block";
+    plus.textContent = open ? "+" : "−";
   };
 });
 
