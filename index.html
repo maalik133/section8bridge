@@ -3,16 +3,16 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Housing Assistance Eligibility</title>
+<title>Assistance Eligibility Check</title>
 
 <style>
 :root{
   --navy:#102A43;
   --blue:#2563EB;
   --blue2:#1D4ED8;
-  --light:#F3F7FB;
+  --sky:#EAF3FF;
   --green:#16A34A;
-  --gold:#F59E0B;
+  --orange:#EA580C;
   --text:#111827;
   --muted:#667085;
   --border:#E5E7EB;
@@ -25,7 +25,6 @@ body{
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
   background:linear-gradient(180deg,#EAF3FF 0%,#F8FAFC 45%,#FFFFFF 100%);
   color:var(--text);
-  padding-bottom:95px;
 }
 
 .wrapper{
@@ -35,12 +34,12 @@ body{
 }
 
 .alert{
-  background:var(--navy);
+  background:#102A43;
   color:#fff;
   padding:12px 14px;
   border-radius:0 0 18px 18px;
   font-size:14px;
-  font-weight:700;
+  font-weight:800;
   text-align:center;
   box-shadow:0 8px 22px rgba(16,42,67,.25);
 }
@@ -58,22 +57,6 @@ body{
   background:linear-gradient(135deg,#12355B 0%,#2563EB 100%);
   color:#fff;
   padding:26px 22px 24px;
-}
-
-.top-row{
-  display:flex;
-  justify-content:space-between;
-  gap:10px;
-  margin-bottom:18px;
-}
-
-.pill{
-  background:rgba(255,255,255,.16);
-  border:1px solid rgba(255,255,255,.25);
-  padding:8px 12px;
-  border-radius:999px;
-  font-size:13px;
-  font-weight:800;
 }
 
 .progress-wrap{
@@ -121,13 +104,13 @@ h1{
 
 .timer-title{
   font-size:14px;
-  font-weight:900;
+  font-weight:950;
   color:#9A3412;
   margin-bottom:8px;
 }
 
 .timer{
-  font-size:28px;
+  font-size:30px;
   font-weight:950;
   color:#EA580C;
   letter-spacing:.5px;
@@ -301,23 +284,6 @@ h1{
   margin:18px 0 8px;
 }
 
-.sticky-cta{
-  position:fixed;
-  bottom:0;
-  left:0;
-  right:0;
-  background:rgba(255,255,255,.94);
-  backdrop-filter:blur(12px);
-  border-top:1px solid #E5E7EB;
-  padding:12px 14px 16px;
-  z-index:99;
-}
-
-.sticky-inner{
-  max-width:480px;
-  margin:0 auto;
-}
-
 .small{
   font-size:12px;
   color:#667085;
@@ -338,22 +304,17 @@ h1{
 <body>
 
 <div class="alert" id="activityAlert">
-  🔔 James from Texas just checked eligibility for housing assistance
+  🔔 James from Texas just checked eligibility for $1,200/mo in available assistance
 </div>
 
 <div class="wrapper">
   <div class="card">
     <div class="hero">
-      <div class="top-row">
-        <div class="pill">Step 1 of 2</div>
-        <div class="pill">Housing Help</div>
-      </div>
-
       <div class="progress-wrap">
         <div class="progress" id="progress"></div>
       </div>
 
-      <h1>Check Housing Assistance Options In Your Area</h1>
+      <h1>Check Assistance Programs Available In Your Area</h1>
       <p>
         See if you may qualify for rent, utility, grocery, or housing support programs.
         Availability depends on your location and eligibility.
@@ -363,15 +324,15 @@ h1{
     <div class="content">
 
       <div class="timer-box">
-        <div class="timer-title">Today’s eligibility review window closes in:</div>
+        <div class="timer-title">Application spots are updating soon. Check before this window closes:</div>
         <div class="timer" id="timer">14:59</div>
       </div>
 
       <div class="live-box">
         <div class="dot"></div>
         <div>
-          <strong>Recent activity</strong>
-          <span id="liveText">Maria from Florida just started an eligibility check.</span>
+          <strong>Recent eligibility activity</strong>
+          <span id="liveText">Maria from Florida just checked for $850 in rent and utility support.</span>
         </div>
       </div>
 
@@ -428,19 +389,24 @@ h1{
         </div>
       </div>
 
-      <a class="cta" href="YOUR_TRACKING_LINK_HERE" onclick="fillProgress()">Check Eligibility →</a>
+      <a class="cta" href="https://trksy.org/aff_c?offer_id=2300&aff_id=170653" onclick="fillProgress()">Check Eligibility →</a>
       <div class="small">Free to check • No obligation • Takes about 1–2 minutes</div>
 
-      <h2 class="section-title">What People Are Checking For</h2>
+      <h2 class="section-title">Recent Eligibility Checks</h2>
 
       <div class="testimonial">
-        <p>“I didn’t even know there were programs that helped with rent and bills.”</p>
-        <strong>— Recently checked in Georgia</strong>
+        <p>“I checked for rent help and saw options showing up to $1,200/mo depending on eligibility.”</p>
+        <strong>— James, Texas</strong>
       </div>
 
       <div class="testimonial">
-        <p>“The process was quick. I just wanted to see what options were available near me.”</p>
-        <strong>— Recently checked in Texas</strong>
+        <p>“I was looking for utility and grocery help. The check only took about 2 minutes.”</p>
+        <strong>— Angela, Georgia</strong>
+      </div>
+
+      <div class="testimonial">
+        <p>“I didn’t know there were programs that could help with housing and bills in one place.”</p>
+        <strong>— Maria, Florida</strong>
       </div>
 
       <h2 class="section-title">Frequently Asked Questions</h2>
@@ -465,12 +431,7 @@ h1{
         <div class="faq-a">Programs may include rent assistance, utility support, housing resources, food assistance, or other benefit options depending on your area.</div>
       </div>
 
-      <div class="faq-item">
-        <div class="faq-q">Is this a government website? <span class="plus">+</span></div>
-        <div class="faq-a">No. This page is not affiliated with any government agency. It helps connect users with assistance resources and eligibility options.</div>
-      </div>
-
-      <a class="cta" href="https://trksy.org/aff_c?offer_id=2300&aff_id=170653" onclick="fillProgress()">Continue To Eligibility Check →</a>
+      <a class="cta" href="https://linkthem.net/aff_c?offer_id=3200&aff_id=170653" onclick="fillProgress()">Continue To Eligibility Check →</a>
 
       <p class="disclaimer">
         This page is for informational purposes only and is not affiliated with any government agency.
@@ -478,12 +439,6 @@ h1{
       </p>
 
     </div>
-  </div>
-</div>
-
-<div class="sticky-cta">
-  <div class="sticky-inner">
-    <a class="cta" style="margin:0;" href="https://trksy.org/aff_c?offer_id=2300&aff_id=170653" onclick="fillProgress()">Check Eligibility Now →</a>
   </div>
 </div>
 
@@ -521,19 +476,19 @@ setInterval(() => {
 }, 1000);
 
 const alerts = [
-  "🔔 James from Texas just checked eligibility for housing assistance",
-  "🔔 Maria from Florida just started an eligibility check",
-  "🔔 Angela from Georgia checked housing support options",
-  "🔔 Robert from Ohio looked for utility assistance",
-  "🔔 Denise from Michigan checked available programs"
+  "🔔 James from Texas just checked eligibility for $1,200/mo in available assistance",
+  "🔔 Maria from Florida just checked for $850 in rent and utility support",
+  "🔔 Angela from Georgia checked options for $640 in grocery and bill support",
+  "🔔 Robert from Ohio checked eligibility for $975/mo in available benefits",
+  "🔔 Denise from Michigan checked housing support options near her"
 ];
 
 const liveTexts = [
-  "Maria from Florida just started an eligibility check.",
-  "James from Texas checked rent assistance options.",
-  "Angela from Georgia looked for housing support.",
-  "Robert from Ohio checked utility assistance resources.",
-  "Denise from Michigan checked available programs."
+  "Maria from Florida just checked for $850 in rent and utility support.",
+  "James from Texas checked options showing up to $1,200/mo depending on eligibility.",
+  "Angela from Georgia checked for $640 in grocery and bill support.",
+  "Robert from Ohio checked eligibility for $975/mo in available benefits.",
+  "Denise from Michigan checked housing support options near her."
 ];
 
 let i = 0;
