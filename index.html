@@ -1,535 +1,352 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Housing Assistance Eligibility</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Coach Rewards</title>
 
-<style>
-:root{
-  --green:#22B66E;
-  --green-dark:#15985A;
-  --navy:#101827;
-  --text:#111827;
-  --muted:#667085;
-  --bg:#F6F8FB;
-  --card:#FFFFFF;
-  --border:#E5E7EB;
-  --blue:#2563EB;
-}
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-*{box-sizing:border-box}
+    body {
+      background: #f6f1ea;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #111;
+      padding: 24px 14px;
+    }
 
-body{
-  margin:0;
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
-  background:var(--bg);
-  color:var(--text);
-}
+    .brand {
+      text-align: center;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 44px;
+      letter-spacing: 3px;
+      color: #111;
+      margin-bottom: 24px;
+      font-weight: 500;
+    }
 
-.top-alert{
-  background:#E9F8EF;
-  color:#16834F;
-  text-align:center;
-  padding:13px 14px;
-  font-weight:900;
-  font-size:14px;
-}
+    .container {
+      width: 100%;
+      max-width: 530px;
+      margin: 0 auto;
+      background: #fffaf4;
+      border: 1px solid #d8c8b5;
+      border-radius: 16px;
+      padding: 24px 18px 30px;
+      box-shadow: 0 10px 28px rgba(75, 46, 25, 0.12);
+      overflow: hidden;
+    }
 
-.progress-wrap{
-  height:6px;
-  background:#E5E7EB;
-  width:100%;
-  position:sticky;
-  top:0;
-  z-index:50;
-}
+    h1 {
+      font-size: 30px;
+      line-height: 1.15;
+      text-align: center;
+      margin-bottom: 14px;
+      font-weight: 800;
+      color: #171717;
+      word-break: keep-all;
+    }
 
-.progress{
-  height:100%;
-  width:12%;
-  background:linear-gradient(90deg,var(--green),#34D399);
-  transition:width .35s ease;
-}
+    .badge {
+      width: fit-content;
+      margin: 0 auto 18px;
+      background: #4b2e1f;
+      color: white;
+      padding: 10px 22px;
+      border-radius: 999px;
+      font-size: 20px;
+      font-weight: 800;
+      box-shadow: 0 8px 18px rgba(75, 46, 31, 0.25);
+    }
 
-.wrapper{
-  max-width:480px;
-  margin:0 auto;
-  padding:18px 14px 26px;
-}
+    .subtext {
+      text-align: center;
+      font-size: 14px;
+      line-height: 1.45;
+      color: #352519;
+      margin-bottom: 24px;
+    }
 
-.hero{
-  background:linear-gradient(180deg,#FFFFFF 0%,#F8FAFC 100%);
-  border-radius:26px;
-  padding:30px 22px;
-  box-shadow:0 16px 35px rgba(15,23,42,.08);
-  border:1px solid rgba(17,24,39,.06);
-  text-align:center;
-}
+    .step {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      background: #fffdf9;
+      border: 1px solid #ddd0c2;
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 16px;
+      width: 100%;
+    }
 
-.badge{
-  display:inline-flex;
-  align-items:center;
-  gap:7px;
-  background:#ECFDF5;
-  color:#16834F;
-  font-size:13px;
-  font-weight:900;
-  padding:9px 13px;
-  border-radius:999px;
-  margin-bottom:18px;
-}
+    .check {
+      min-width: 28px;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #111;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      font-weight: 900;
+      margin-top: 2px;
+    }
 
-h1{
-  font-size:34px;
-  line-height:1.05;
-  letter-spacing:-1px;
-  margin:0 0 14px;
-}
+    .step-text {
+      width: 100%;
+      overflow-wrap: break-word;
+    }
 
-.highlight{
-  color:var(--green);
-}
+    .step h3 {
+      font-size: 17px;
+      margin-bottom: 5px;
+      font-weight: 800;
+      line-height: 1.3;
+    }
 
-.sub{
-  color:var(--muted);
-  font-size:17px;
-  line-height:1.5;
-  margin:0 0 22px;
-}
+    .step p {
+      font-size: 14px;
+      line-height: 1.45;
+      color: #2f2118;
+    }
 
-.cta{
-  display:block;
-  width:100%;
-  background:linear-gradient(135deg,var(--green),var(--green-dark));
-  color:white;
-  text-decoration:none;
-  text-align:center;
-  padding:18px 16px;
-  border-radius:17px;
-  font-size:18px;
-  font-weight:950;
-  box-shadow:0 14px 28px rgba(34,182,110,.30);
-  margin:18px 0 10px;
-}
+    .info-box {
+      background: #fffdf9;
+      border: 1px solid #ddd0c2;
+      border-radius: 12px;
+      padding: 18px 16px;
+      margin: 22px 0;
+      width: 100%;
+    }
 
-.trust-pill{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:8px;
-  margin-top:13px;
-  background:#F2F4F7;
-  color:#667085;
-  border-radius:999px;
-  padding:11px 16px;
-  font-weight:800;
-  font-size:14px;
-}
+    .info-box h3 {
+      font-size: 18px;
+      margin-bottom: 8px;
+      font-weight: 800;
+    }
 
-.timer-box{
-  margin-top:18px;
-  background:#FFF7ED;
-  border:1px solid #FED7AA;
-  border-radius:18px;
-  padding:15px;
-}
+    .info-box p {
+      font-size: 14px;
+      line-height: 1.45;
+      color: #2f2118;
+    }
 
-.timer-title{
-  color:#9A3412;
-  font-size:14px;
-  font-weight:950;
-  margin-bottom:7px;
-}
+    .cta {
+      display: block;
+      width: 100%;
+      text-align: center;
+      background: #111;
+      color: white;
+      text-decoration: none;
+      padding: 18px 14px;
+      border-radius: 10px;
+      font-size: 20px;
+      font-weight: 800;
+      margin-top: 8px;
+      transition: 0.2s ease;
+      box-shadow: 0 10px 22px rgba(0,0,0,0.18);
+    }
 
-.timer{
-  color:#EA580C;
-  font-size:30px;
-  font-weight:950;
-}
+    .cta:hover {
+      background: #4b2e1f;
+      transform: translateY(-1px);
+    }
 
-.live-box{
-  margin-top:14px;
-  background:#ECFDF5;
-  border:1px solid #BBF7D0;
-  border-radius:18px;
-  padding:14px;
-  display:flex;
-  gap:11px;
-  text-align:left;
-  align-items:flex-start;
-}
+    .fine-print {
+      text-align: center;
+      font-size: 12px;
+      color: #6c5a49;
+      margin: 14px 0 30px;
+      line-height: 1.4;
+    }
 
-.dot{
-  width:11px;
-  height:11px;
-  background:#22C55E;
-  border-radius:50%;
-  margin-top:5px;
-  flex-shrink:0;
-  box-shadow:0 0 0 6px rgba(34,197,94,.13);
-}
+    h2 {
+      font-size: 28px;
+      line-height: 1.2;
+      margin-bottom: 18px;
+      font-weight: 900;
+    }
 
-.live-box strong{
-  display:block;
-  font-size:14px;
-  margin-bottom:4px;
-}
+    details {
+      background: #fffdf9;
+      border: 1px solid #ddd0c2;
+      border-radius: 10px;
+      padding: 18px 14px;
+      margin-bottom: 12px;
+      width: 100%;
+    }
 
-.live-box span{
-  color:#166534;
-  font-size:13px;
-  line-height:1.35;
-}
+    summary {
+      list-style: none;
+      cursor: pointer;
+      font-size: 17px;
+      font-weight: 800;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      line-height: 1.35;
+    }
 
-.section{
-  margin-top:24px;
-}
+    summary::-webkit-details-marker {
+      display: none;
+    }
 
-.section-title{
-  font-size:25px;
-  letter-spacing:-.4px;
-  margin:0 0 13px;
-}
+    summary::after {
+      content: "+";
+      font-size: 24px;
+      font-weight: 900;
+      flex-shrink: 0;
+    }
 
-.program-card{
-  background:white;
-  border:1px solid var(--border);
-  border-radius:18px;
-  padding:15px;
-  margin-bottom:11px;
-  display:flex;
-  gap:12px;
-  box-shadow:0 8px 18px rgba(15,23,42,.04);
-}
+    details[open] summary::after {
+      content: "-";
+    }
 
-.icon{
-  width:38px;
-  height:38px;
-  border-radius:50%;
-  background:#EFF6FF;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  flex-shrink:0;
-  font-size:19px;
-}
+    details p {
+      margin-top: 12px;
+      font-size: 14px;
+      line-height: 1.45;
+      color: #2f2118;
+    }
 
-.program-card strong{
-  display:block;
-  font-size:15px;
-  margin-bottom:4px;
-}
+    @media (max-width: 520px) {
+      .brand {
+        font-size: 38px;
+      }
 
-.program-card p{
-  margin:0;
-  color:var(--muted);
-  font-size:13px;
-  line-height:1.35;
-}
+      h1 {
+        font-size: 25px;
+      }
 
-.steps{
-  background:white;
-  border:1px solid var(--border);
-  border-radius:22px;
-  padding:18px;
-  box-shadow:0 12px 24px rgba(15,23,42,.06);
-}
+      h2 {
+        font-size: 24px;
+      }
 
-.step{
-  display:flex;
-  gap:12px;
-  margin-bottom:15px;
-  color:#344054;
-  font-size:14px;
-  line-height:1.4;
-}
+      .container {
+        padding: 22px 16px 28px;
+      }
 
-.step:last-child{margin-bottom:0}
-
-.num{
-  width:26px;
-  height:26px;
-  border-radius:50%;
-  background:var(--blue);
-  color:white;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-weight:950;
-  font-size:13px;
-  flex-shrink:0;
-}
-
-.mini-proof{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:10px;
-}
-
-.stat{
-  background:white;
-  border:1px solid var(--border);
-  border-radius:18px;
-  padding:18px 12px;
-  text-align:center;
-  box-shadow:0 8px 18px rgba(15,23,42,.04);
-}
-
-.stat strong{
-  display:block;
-  font-size:27px;
-  color:var(--green);
-  margin-bottom:4px;
-}
-
-.stat span{
-  color:var(--muted);
-  font-size:13px;
-}
-
-.faq-item{
-  background:white;
-  border:1px solid var(--border);
-  border-radius:17px;
-  margin-bottom:10px;
-  overflow:hidden;
-  box-shadow:0 8px 18px rgba(15,23,42,.04);
-}
-
-.faq-q{
-  padding:15px;
-  font-weight:900;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  cursor:pointer;
-}
-
-.plus{
-  background:#F2F4F7;
-  color:var(--green-dark);
-  width:29px;
-  height:29px;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:20px;
-  font-weight:950;
-}
-
-.faq-a{
-  display:none;
-  padding:0 15px 15px;
-  color:#667085;
-  font-size:14px;
-  line-height:1.45;
-}
-
-.disclaimer{
-  color:#98A2B3;
-  font-size:11px;
-  line-height:1.45;
-  text-align:center;
-  margin:18px 0 0;
-}
-</style>
+      .cta {
+        font-size: 18px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="top-alert" id="alert">
-  🔔 James from Texas just qualified for $1,200 in monthly assistance
-</div>
+  <div class="brand">COACH</div>
 
-<div class="progress-wrap">
-  <div class="progress" id="progress"></div>
-</div>
+  <main class="container">
 
-<div class="wrapper">
+    <h1>Coach Discounts + Rewards</h1>
 
-  <section class="hero">
-    <div class="badge">● New assistance options available</div>
+    <div class="badge">Up to $750</div>
 
-    <h1>Check Your <span class="highlight">Housing Assistance</span> Eligibility Today</h1>
-
-    <p class="sub">
-      Many Americans may qualify for rent, utility, grocery, or housing support programs but haven’t checked yet.
+    <p class="subtext">
+      This page explains how people are getting Coach rewards online.
     </p>
 
-    <a href="YOUR_TRACKING_LINK_HERE" class="cta" onclick="fillProgress()">Check My Eligibility Now →</a>
+    <section class="step">
+      <div class="check">✓</div>
 
-    <div class="trust-pill">🔒 100% Secure & Confidential</div>
+      <div class="step-text">
+        <h3>Enter a valid email</h3>
 
-    <div class="timer-box">
-      <div class="timer-title">Application spots are updating soon. Check before the window closes:</div>
-      <div class="timer" id="timer">14:59</div>
-    </div>
-
-    <div class="live-box">
-      <div class="dot"></div>
-      <div>
-        <strong>Recent eligibility activity</strong>
-        <span id="live">Maria from Florida just qualified for $300 in grocery assistance</span>
+        <p>
+          Continue to the next page and submit your email to start.
+        </p>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="section">
-    <h2 class="section-title">Programs May Include:</h2>
+    <section class="step">
+      <div class="check">✓</div>
 
-    <div class="program-card">
-      <div class="icon">🏠</div>
-      <div>
-        <strong>Rent & Housing Support</strong>
-        <p>Programs that may help eligible people with rent or housing-related costs.</p>
+      <div class="step-text">
+        <h3>Complete 4–5 deals</h3>
+
+        <p>
+          Deals may include surveys, app installs, trial offers, or similar steps.
+        </p>
       </div>
-    </div>
+    </section>
 
-    <div class="program-card">
-      <div class="icon">⚡</div>
-      <div>
-        <strong>Utility Bill Assistance</strong>
-        <p>Help with electricity, gas, water, or other household utility expenses.</p>
+    <section class="step">
+      <div class="check">✓</div>
+
+      <div class="step-text">
+        <h3>Receive your reward</h3>
+
+        <p>
+          After completing the required steps, you can qualify for your reward.
+        </p>
       </div>
-    </div>
+    </section>
 
-    <div class="program-card">
-      <div class="icon">🛒</div>
-      <div>
-        <strong>Food & Grocery Resources</strong>
-        <p>Resources that may help households manage rising grocery costs.</p>
-      </div>
-    </div>
+    <section class="info-box">
+      <h3>What happens next?</h3>
 
-    <div class="program-card">
-      <div class="icon">📍</div>
-      <div>
-        <strong>Local Assistance Options</strong>
-        <p>Options vary by state, city, income, household size, and availability.</p>
-      </div>
-    </div>
-  </section>
+      <p>
+        You’ll continue to the next page, answer a few quick questions,
+        submit your email, and complete the required deals shown to you.
+      </p>
+    </section>
 
-  <section class="section steps">
-    <h2 class="section-title" style="margin-top:0;">How It Works</h2>
+    <!-- REPLACE WITH YOUR AFFILIATE LINK -->
+    <a class="cta" href="https://linkthem.net/aff_c?offer_id=4280&aff_id=170653&source=coachlander1">
+      Continue to Next Step →
+    </a>
 
-    <div class="step">
-      <span class="num">1</span>
-      <span><strong>Quick Check:</strong> Tap the button and start your eligibility check.</span>
-    </div>
+    <p class="fine-print">
+      Eligibility and completion requirements apply.
+    </p>
 
-    <div class="step">
-      <span class="num">2</span>
-      <span><strong>Verify Info:</strong> Enter basic details like name, address, zip code, email, and phone number.</span>
-    </div>
+    <h2>Frequently Asked Questions</h2>
 
-    <div class="step">
-      <span class="num">3</span>
-      <span><strong>See Options:</strong> Continue to view assistance options that may be available based on your info.</span>
-    </div>
-  </section>
+    <details>
+      <summary>How do I get the discount?</summary>
 
-  <a href="https://trksy.org/aff_c?offer_id=2300&aff_id=170653" class="cta" onclick="fillProgress()">Start Eligibility Check →</a>
+      <p>
+        Click the button above, continue to the next page, submit your email,
+        and complete the required steps shown to you.
+      </p>
+    </details>
 
-  <section class="section mini-proof">
-    <div class="stat">
-      <strong>1–2</strong>
-      <span>Minutes to start</span>
-    </div>
-    <div class="stat">
-      <strong>Free</strong>
-      <span>No obligation</span>
-    </div>
-  </section>
+    <details>
+      <summary>How many deals do I have to do?</summary>
 
-  <section class="section">
-    <h2 class="section-title">Frequently Asked Questions</h2>
+      <p>
+        Most users are shown around 4–5 deals. The exact number may depend
+        on the offers available.
+      </p>
+    </details>
 
-    <div class="faq-item">
-      <div class="faq-q">Is this free to check? <span class="plus">+</span></div>
-      <div class="faq-a">Yes. Checking eligibility is free and there is no obligation.</div>
-    </div>
+    <details>
+      <summary>How long do the deals take?</summary>
 
-    <div class="faq-item">
-      <div class="faq-q">How do I know if I qualify? <span class="plus">+</span></div>
-      <div class="faq-a">Eligibility depends on your location, income, household situation, and program availability.</div>
-    </div>
+      <p>
+        Timing can vary, but many steps are simple tasks such as surveys,
+        app installs, trials, or similar requirements.
+      </p>
+    </details>
 
-    <div class="faq-item">
-      <div class="faq-q">What information is needed? <span class="plus">+</span></div>
-      <div class="faq-a">The next page may ask for basic information such as your name, address, zip code, email, phone number, and date of birth.</div>
-    </div>
+    <details>
+      <summary>When will I receive my reward?</summary>
 
-    <div class="faq-item">
-      <div class="faq-q">How long does it take? <span class="plus">+</span></div>
-      <div class="faq-a">Most people can start the eligibility check in about 1–2 minutes.</div>
-    </div>
+      <p>
+        Once the required steps are completed and verified,
+        your reward instructions will be shown based on the offer page.
+      </p>
+    </details>
 
-    <div class="faq-item">
-      <div class="faq-q">Is my information secure? <span class="plus">+</span></div>
-      <div class="faq-a">Your information is used to check eligibility and available options. Always review the terms and privacy policy on the next page before submitting.</div>
-    </div>
-  </section>
-
-  <a href="https://trksy.org/aff_c?offer_id=2300&aff_id=170653" class="cta" onclick="fillProgress()">Check Eligibility Now →</a>
-
-  <p class="disclaimer">
-    This page is for informational purposes only and is not affiliated with any government agency.
-    Results vary by location, eligibility, and program availability. Replace any example activity claims with verified claims before running live traffic.
-  </p>
-
-</div>
-
-<script>
-const progress = document.getElementById("progress");
-
-window.addEventListener("scroll", () => {
-  const scrollTop = window.scrollY;
-  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-  const scrollPercent = Math.min(96, Math.max(12, (scrollTop / docHeight) * 100));
-  progress.style.width = scrollPercent + "%";
-});
-
-function fillProgress(){
-  progress.style.width = "100%";
-}
-
-document.querySelectorAll(".faq-q").forEach(q=>{
-  q.onclick = ()=>{
-    const a = q.nextElementSibling;
-    const plus = q.querySelector(".plus");
-    const open = a.style.display === "block";
-    a.style.display = open ? "none" : "block";
-    plus.textContent = open ? "+" : "−";
-  };
-});
-
-const alerts = [
-  "James from Texas just qualified for $1,200 in monthly assistance",
-  "Maria from Florida just qualified for $300 in grocery assistance",
-  "Angela from Georgia just qualified for $100 in utility bills support",
-  "Robert from Ohio just qualified for a housing program",
-  "Denise from Michigan just qualified for $1600 in rent relief options"
-];
-
-let i = 0;
-setInterval(()=>{
-  i = (i + 1) % alerts.length;
-  document.getElementById("alert").textContent = "🔔 " + alerts[i];
-  document.getElementById("live").textContent = alerts[i];
-}, 4200);
-
-let t = 899;
-setInterval(()=>{
-  const m = Math.floor(t / 60);
-  const s = t % 60;
-  document.getElementById("timer").textContent =
-    `${String(m).padStart(2,"0")}:${String(s).padStart(2,"0")}`;
-  if(t > 0) t--;
-}, 1000);
-</script>
+  </main>
 
 </body>
 </html>
