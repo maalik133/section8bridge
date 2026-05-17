@@ -107,6 +107,14 @@
       margin-top: 2px;
     }
 
+    .info-icon {
+      font-family: Georgia, "Times New Roman", serif;
+      font-style: italic;
+      font-size: 22px;
+      font-weight: 700;
+      padding-right: 2px;
+    }
+
     .step-text {
       width: 100%;
     }
@@ -161,13 +169,19 @@
       font-weight: 800;
       margin-top: 8px;
       box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
-      transition: 0.2s ease;
+      transition: background-color 0.18s ease, transform 0.18s ease;
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
     }
 
-    .cta:hover,
-    .cta:active {
+    .cta:hover {
       background: #7a4a24;
       transform: translateY(-1px);
+    }
+
+    .cta:active {
+      background: #7a4a24;
+      transform: scale(0.985);
     }
 
     .fine-print {
@@ -325,7 +339,7 @@
     </section>
 
     <section class="info-box">
-      <div class="icon">i</div>
+      <div class="icon info-icon">i</div>
       <div class="step-text">
         <h3>What happens next?</h3>
         <p>
