@@ -5,242 +5,270 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Coach Rewards</title>
 
+  <!-- Luxury Serif Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
+
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
     }
 
-    body {
-      background: #f6f1ea;
-      font-family: Arial, Helvetica, sans-serif;
-      color: #111;
-      padding: 24px 14px;
+    body{
+      background:#f6f1ea;
+      font-family:Arial, Helvetica, sans-serif;
+      color:#111;
+      padding:24px 14px;
     }
 
-    .brand {
-      text-align: center;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 44px;
-      letter-spacing: 3px;
-      color: #111;
-      margin-bottom: 24px;
-      font-weight: 500;
+    /* COACH HEADER */
+
+    .brand{
+      text-align:center;
+      font-family:'Cormorant Garamond', serif;
+      font-size:58px;
+      font-weight:700;
+      letter-spacing:1px;
+      color:#111;
+      line-height:1;
+      margin-bottom:24px;
+      text-transform:uppercase;
     }
 
-    .container {
-      width: 100%;
-      max-width: 530px;
-      margin: 0 auto;
-      background: #fffaf4;
-      border: 1px solid #d8c8b5;
-      border-radius: 16px;
-      padding: 24px 18px 30px;
-      box-shadow: 0 10px 28px rgba(75, 46, 25, 0.12);
-      overflow: hidden;
+    /* MAIN BOX */
+
+    .container{
+      width:100%;
+      max-width:530px;
+      margin:0 auto;
+      background:#fffaf4;
+      border:1px solid #d8c8b5;
+      border-radius:16px;
+      padding:24px 18px 30px;
+      box-shadow:0 10px 28px rgba(75,46,25,0.12);
+      overflow:hidden;
     }
 
-    h1 {
-      font-size: 30px;
-      line-height: 1.15;
-      text-align: center;
-      margin-bottom: 14px;
-      font-weight: 800;
-      color: #171717;
-      word-break: keep-all;
+    h1{
+      font-size:30px;
+      line-height:1.15;
+      text-align:center;
+      margin-bottom:14px;
+      font-weight:800;
+      color:#171717;
+      word-break:keep-all;
     }
 
-    .badge {
-      width: fit-content;
-      margin: 0 auto 18px;
-      background: #4b2e1f;
-      color: white;
-      padding: 10px 22px;
-      border-radius: 999px;
-      font-size: 20px;
-      font-weight: 800;
-      box-shadow: 0 8px 18px rgba(75, 46, 31, 0.25);
+    .badge{
+      width:fit-content;
+      margin:0 auto 18px;
+      background:#4b2e1f;
+      color:white;
+      padding:10px 22px;
+      border-radius:999px;
+      font-size:20px;
+      font-weight:800;
+      box-shadow:0 8px 18px rgba(75,46,31,0.25);
     }
 
-    .subtext {
-      text-align: center;
-      font-size: 14px;
-      line-height: 1.45;
-      color: #352519;
-      margin-bottom: 24px;
+    .subtext{
+      text-align:center;
+      font-size:14px;
+      line-height:1.45;
+      color:#352519;
+      margin-bottom:24px;
     }
 
-    .step {
-      display: flex;
-      gap: 14px;
-      align-items: flex-start;
-      background: #fffdf9;
-      border: 1px solid #ddd0c2;
-      border-radius: 12px;
-      padding: 16px;
-      margin-bottom: 16px;
-      width: 100%;
+    /* STEPS */
+
+    .step{
+      display:flex;
+      gap:14px;
+      align-items:flex-start;
+      background:#fffdf9;
+      border:1px solid #ddd0c2;
+      border-radius:12px;
+      padding:16px;
+      margin-bottom:16px;
+      width:100%;
     }
 
-    .check {
-      min-width: 28px;
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      background: #111;
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 18px;
-      font-weight: 900;
-      margin-top: 2px;
+    .check{
+      min-width:28px;
+      width:28px;
+      height:28px;
+      border-radius:50%;
+      background:#111;
+      color:white;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:18px;
+      font-weight:900;
+      margin-top:2px;
     }
 
-    .step-text {
-      width: 100%;
-      overflow-wrap: break-word;
+    .step-text{
+      width:100%;
+      overflow-wrap:break-word;
     }
 
-    .step h3 {
-      font-size: 17px;
-      margin-bottom: 5px;
-      font-weight: 800;
-      line-height: 1.3;
+    .step h3{
+      font-size:17px;
+      margin-bottom:5px;
+      font-weight:800;
+      line-height:1.3;
     }
 
-    .step p {
-      font-size: 14px;
-      line-height: 1.45;
-      color: #2f2118;
+    .step p{
+      font-size:14px;
+      line-height:1.45;
+      color:#2f2118;
     }
 
-    .info-box {
-      background: #fffdf9;
-      border: 1px solid #ddd0c2;
-      border-radius: 12px;
-      padding: 18px 16px;
-      margin: 22px 0;
-      width: 100%;
+    /* INFO BOX */
+
+    .info-box{
+      background:#fffdf9;
+      border:1px solid #ddd0c2;
+      border-radius:12px;
+      padding:18px 16px;
+      margin:22px 0;
+      width:100%;
     }
 
-    .info-box h3 {
-      font-size: 18px;
-      margin-bottom: 8px;
-      font-weight: 800;
+    .info-box h3{
+      font-size:18px;
+      margin-bottom:8px;
+      font-weight:800;
     }
 
-    .info-box p {
-      font-size: 14px;
-      line-height: 1.45;
-      color: #2f2118;
+    .info-box p{
+      font-size:14px;
+      line-height:1.45;
+      color:#2f2118;
     }
 
-    .cta {
-      display: block;
-      width: 100%;
-      text-align: center;
-      background: #111;
-      color: white;
-      text-decoration: none;
-      padding: 18px 14px;
-      border-radius: 10px;
-      font-size: 20px;
-      font-weight: 800;
-      margin-top: 8px;
-      transition: 0.2s ease;
-      box-shadow: 0 10px 22px rgba(0,0,0,0.18);
+    /* CTA */
+
+    .cta{
+      display:block;
+      width:100%;
+      text-align:center;
+      background:#111;
+      color:white;
+      text-decoration:none;
+      padding:18px 14px;
+      border-radius:10px;
+      font-size:20px;
+      font-weight:800;
+      margin-top:8px;
+      transition:0.2s ease;
+      box-shadow:0 10px 22px rgba(0,0,0,0.18);
     }
 
-    .cta:hover {
-      background: #4b2e1f;
-      transform: translateY(-1px);
+    .cta:hover{
+      background:#4b2e1f;
+      transform:translateY(-1px);
     }
 
-    .fine-print {
-      text-align: center;
-      font-size: 12px;
-      color: #6c5a49;
-      margin: 14px 0 30px;
-      line-height: 1.4;
+    .fine-print{
+      text-align:center;
+      font-size:12px;
+      color:#6c5a49;
+      margin:14px 0 30px;
+      line-height:1.4;
     }
 
-    h2 {
-      font-size: 28px;
-      line-height: 1.2;
-      margin-bottom: 18px;
-      font-weight: 900;
+    /* FAQ */
+
+    h2{
+      font-size:28px;
+      line-height:1.2;
+      margin-bottom:18px;
+      font-weight:900;
     }
 
-    details {
-      background: #fffdf9;
-      border: 1px solid #ddd0c2;
-      border-radius: 10px;
-      padding: 18px 14px;
-      margin-bottom: 12px;
-      width: 100%;
+    details{
+      background:#fffdf9;
+      border:1px solid #ddd0c2;
+      border-radius:10px;
+      padding:18px 14px;
+      margin-bottom:12px;
+      width:100%;
     }
 
-    summary {
-      list-style: none;
-      cursor: pointer;
-      font-size: 17px;
-      font-weight: 800;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 10px;
-      line-height: 1.35;
+    summary{
+      list-style:none;
+      cursor:pointer;
+      font-size:17px;
+      font-weight:800;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:10px;
+      line-height:1.35;
     }
 
-    summary::-webkit-details-marker {
-      display: none;
+    summary::-webkit-details-marker{
+      display:none;
     }
 
-    summary::after {
-      content: "+";
-      font-size: 24px;
-      font-weight: 900;
-      flex-shrink: 0;
+    summary::after{
+      content:"+";
+      font-size:24px;
+      font-weight:900;
+      flex-shrink:0;
     }
 
-    details[open] summary::after {
-      content: "-";
+    details[open] summary::after{
+      content:"-";
     }
 
-    details p {
-      margin-top: 12px;
-      font-size: 14px;
-      line-height: 1.45;
-      color: #2f2118;
+    details p{
+      margin-top:12px;
+      font-size:14px;
+      line-height:1.45;
+      color:#2f2118;
     }
 
-    @media (max-width: 520px) {
-      .brand {
-        font-size: 38px;
+    /* MOBILE */
+
+    @media (max-width:520px){
+
+      .brand{
+        font-size:48px;
       }
 
-      h1 {
-        font-size: 25px;
+      h1{
+        font-size:25px;
       }
 
-      h2 {
-        font-size: 24px;
+      h2{
+        font-size:24px;
       }
 
-      .container {
-        padding: 22px 16px 28px;
+      .container{
+        padding:22px 16px 28px;
       }
 
-      .cta {
-        font-size: 18px;
+      .cta{
+        font-size:18px;
       }
+
     }
+
   </style>
 </head>
 
 <body>
+
+  <!-- COACH HEADER -->
 
   <div class="brand">COACH</div>
 
@@ -248,102 +276,174 @@
 
     <h1>Coach Discounts + Rewards</h1>
 
-    <div class="badge">Up to $750</div>
+    <div class="badge">
+      Up to $750
+    </div>
 
     <p class="subtext">
       This page explains how people are getting Coach rewards online.
     </p>
 
+    <!-- STEP 1 -->
+
     <section class="step">
-      <div class="check">✓</div>
+
+      <div class="check">
+        ✓
+      </div>
 
       <div class="step-text">
-        <h3>Enter a valid email</h3>
+
+        <h3>
+          Enter a valid email
+        </h3>
 
         <p>
           Continue to the next page and submit your email to start.
         </p>
+
       </div>
+
     </section>
+
+    <!-- STEP 2 -->
 
     <section class="step">
-      <div class="check">✓</div>
+
+      <div class="check">
+        ✓
+      </div>
 
       <div class="step-text">
-        <h3>Complete 4–5 deals</h3>
+
+        <h3>
+          Complete 4–5 deals
+        </h3>
 
         <p>
-          Deals may include surveys, app installs, trial offers, or similar steps.
+          Deals may include surveys, app installs, trial offers,
+          or similar steps.
         </p>
+
       </div>
+
     </section>
+
+    <!-- STEP 3 -->
 
     <section class="step">
-      <div class="check">✓</div>
+
+      <div class="check">
+        ✓
+      </div>
 
       <div class="step-text">
-        <h3>Receive your reward</h3>
+
+        <h3>
+          Receive your reward
+        </h3>
 
         <p>
-          After completing the required steps, you can qualify for your reward.
+          After completing the required steps,
+          you can qualify for your reward.
         </p>
+
       </div>
+
     </section>
+
+    <!-- INFO BOX -->
 
     <section class="info-box">
-      <h3>What happens next?</h3>
+
+      <h3>
+        What happens next?
+      </h3>
 
       <p>
-        You’ll continue to the next page, answer a few quick questions,
-        submit your email, and complete the required deals shown to you.
+        You’ll continue to the next page,
+        answer a few quick questions,
+        submit your email,
+        and complete the required deals shown to you.
       </p>
+
     </section>
 
-    <!-- REPLACE WITH YOUR AFFILIATE LINK -->
-    <a class="cta" href="https://linkthem.net/aff_c?offer_id=4280&aff_id=170653&source=coachlander1">
+    <!-- CTA BUTTON -->
+    <!-- PUT YOUR AFFILIATE LINK BELOW -->
+
+    <a class="cta" href="YOUR_AFFILIATE_LINK_HERE">
+
       Continue to Next Step →
+
     </a>
 
     <p class="fine-print">
       Eligibility and completion requirements apply.
     </p>
 
-    <h2>Frequently Asked Questions</h2>
+    <!-- FAQ -->
+
+    <h2>
+      Frequently Asked Questions
+    </h2>
 
     <details>
-      <summary>How do I get the discount?</summary>
+
+      <summary>
+        How do I get the discount?
+      </summary>
 
       <p>
-        Click the button above, continue to the next page, submit your email,
+        Click the button above,
+        continue to the next page,
+        submit your email,
         and complete the required steps shown to you.
       </p>
+
     </details>
 
     <details>
-      <summary>How many deals do I have to do?</summary>
+
+      <summary>
+        How many deals do I have to do?
+      </summary>
 
       <p>
-        Most users are shown around 4–5 deals. The exact number may depend
-        on the offers available.
+        Most users are shown around 4–5 deals.
+        The exact number may depend on the offers available.
       </p>
+
     </details>
 
     <details>
-      <summary>How long do the deals take?</summary>
+
+      <summary>
+        How long do the deals take?
+      </summary>
 
       <p>
-        Timing can vary, but many steps are simple tasks such as surveys,
-        app installs, trials, or similar requirements.
+        Timing can vary,
+        but many steps are simple tasks such as surveys,
+        app installs,
+        trials,
+        or similar requirements.
       </p>
+
     </details>
 
     <details>
-      <summary>When will I receive my reward?</summary>
+
+      <summary>
+        When will I receive my reward?
+      </summary>
 
       <p>
         Once the required steps are completed and verified,
-        your reward instructions will be shown based on the offer page.
+        your reward instructions will be shown
+        based on the offer page.
       </p>
+
     </details>
 
   </main>
